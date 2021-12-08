@@ -1,0 +1,40 @@
+<div class="cont bg" style="height:50rem">
+    <div class="card" style="width: 50rem;">
+    <div class="card-body">
+    <form class="row g-3" #regform="ngForm" (ngSubmit)="getdata(regform.value,regform,content)">
+        <div class="col-12">
+          <label for="inputEmail4" class="form-label">Username</label>
+          <input required type="text" class="form-control" #un="ngModel" UserName name="UserName" ngModel placeholder="Enter Username">
+        </div>
+        <div class="col-12 error">
+            <p *ngIf="un.invalid && un.touched">Username is Mandatory</p>     
+          </div>
+        <div class="col-12">
+          <label for="inputmobile4" class="form-label">Password</label>
+          <input required type="password" class="form-control" #pass="ngModel" name="Password" ngModel placeholder="Enter the password">
+        </div>
+        <div class="col-12 error">
+            <p *ngIf="pass.invalid && pass.touched">Password is Mandatory</p>      
+        </div>
+        <div class="col-12">
+            <br>
+          <button  type="submit" [disabled]="regform.invalid" class="btn btn-primary">Check</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    </div>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Message</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><b>{{msg}}</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+      </div>
+    </ng-template>

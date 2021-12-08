@@ -1,0 +1,30 @@
+<mat-form-field class="searchbar">
+    <mat-label>Filter</mat-label>
+    <input matInput type="text" [(ngModel)]="value" #sear (keyup)="search(sear.value)" placeholder="Search">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+<h4>Total Number of participants: <b>{{noofusers}}</b></h4><br>
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of filterusers" >
+        <td>{{item.Firstname+" "+item.Middlename+" "+item.Lastname}}</td>
+        <td>{{item.Email}}</td>
+        <td>{{item.Mobilenumber}}</td>
+        <td>{{item.City}}</td>
+        <td>{{item.State}}</td>
+        <td>{{item.Country}}</td>
+    </tr>  
+    </tbody>
+</table>

@@ -1,0 +1,156 @@
+<div class="cont bg" >
+  <div class="card" style="width: 50rem;">
+  <div class="card-body">
+  <form class="row g-3" #regform="ngForm" (ngSubmit)="getdata(regform.value,regform)">
+
+      <div class="col-md-4">
+        <mat-form-field style="text-align: center;">
+          <mat-label for="inputname" class="form-label">First Name</mat-label>
+          <input matInput required type="text" class="form-control" #FN="ngModel" name="First_Name" ngModel>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field style="text-align: center;"> 
+          <mat-label for="input" class="form-label">Middle Name</mat-label>
+          <input matInput type="text" class="form-control" id="MN" name="Middle_Name" ngModel="">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field style="text-align: center;"> 
+          <mat-label for="input" class="form-label">Last Name</mat-label>
+          <input matInput required type="text" class="form-control" #LN="ngModel" name="Last_Name" ngModel>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        </div>
+
+        <div class="col-md-4 error">
+          <p *ngIf="FN.invalid && FN.touched">First Name is Mandatory</p>    
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4 error">
+          <p *ngIf="LN.invalid && LN.touched">Last Name is Mandatory</p>
+        </div>
+
+      <div class="col-md-6">
+        <mat-form-field style="width:20vw; text-align: center;" > 
+        <mat-label for="inputEmail4" class="form-label">Email</mat-label>
+        <input matInput required type="email" class="form-control" #mail="ngModel" email name="email" ngModel>
+        <mat-icon matSuffix> contact_mail</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field style="width:20vw;text-align: center;">
+        <mat-label for="inputmobile4" class="form-label">Phone</mat-label>
+        <input matInput required type="tel" class="form-control" #mob="ngModel" pattern="[0-9]*" minlength="10" maxlength="10" name="phone" ngModel>
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-md-6 error">
+        <p *ngIf="mail.invalid && mail.touched">Email is Mandatory</p>     
+      </div>
+      <div class="col-md-6 error">
+          <p *ngIf="mob.invalid && mob.touched">Mobile number is Mandatory</p>      
+      </div>
+
+      <div class="col-12 add">
+        <mat-form-field style="width:100%; text-align: center; justify-content: center; align-items: center;">
+        <mat-label for="inputAddress" class="form-label">Address</mat-label>
+        <input matInput type="text" class="form-control" id="inputAddress" placeholder="Street/Colony" name="Address1" ngModel>
+        <mat-icon matSuffix>markunread_mailbox</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-12 add">
+        <mat-form-field style="width:100%;text-align: center;">
+        <mat-label for="inputAddress2" class="form-label">Address 2</mat-label>
+        <input matInput type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="Address2" ngModel>
+        <mat-icon matSuffix>markunread_mailbox</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field style="width:10vw; text-align: center;">
+        <mat-label for="inputCity" class="form-label">City</mat-label>
+        <input matInput type="text" class="form-control" id="inputCity" name="City" ngModel>
+        <mat-icon matSuffix>location_city</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field style="width:10vw; text-align: center;">
+        <mat-label for="inputState" class="form-label">State</mat-label>
+        <input matInput type="text" class="form-control" id="inputState" name="State" ngModel>
+        <mat-icon matSuffix> location_on</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-md-3">
+        <mat-form-field style="width:10vw; text-align: center;">
+          <mat-label for="inputState" class="form-label">Country</mat-label>
+          <input matInput type="text" class="form-control" id="inputCountry" name="Country" ngModel>
+          <mat-icon matSuffix> map</mat-icon>
+        </mat-form-field>
+        </div>
+
+      <div class="col-md-3">
+        <mat-form-field style="width:10vw; text-align: center;">
+        <mat-label for="inputZip" class="form-label">Pincode</mat-label>
+        <input matInput type="text" class="form-control" id="inputZip" name="Zip" ngModel>
+        <mat-icon matSuffix>pin_drop</mat-icon>
+      </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field style="width:100%; text-align: center;">
+        <mat-label for="inputedu" class="form-label">Educational Qualification</mat-label>
+        <input matInput type="text" class="form-control" id="inputedu" name="eq" ngModel>
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      </div>
+      
+        <div class="col-md-4" style="display: flex;">
+          <mat-form-field appearance="fill" style="justify-content: center;
+          align-items: center;">
+            <mat-label>Gender</mat-label>
+            <mat-select ngModel name="Gender">
+              <mat-option>None</mat-option>
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+      <div class="col-12">
+          <br>
+        <button  mat-raised-button color="primary"  type="submit" (click)="setdata(content)">Register</button>
+      </div>
+      <br>
+      <br>
+    </form>
+    <br>
+    <div class="col-12 notes">
+      <p><b>Note:</b> A mail will be send to the registered email which includes transaction password that can be used to edit the data.
+      <br><b>Note:</b> If the mail isn't visible in your inbox then check in spam.</p>
+    </div>
+  </div>
+  </div>
+  </div>
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Message</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><b>{{msg}}</b></p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>

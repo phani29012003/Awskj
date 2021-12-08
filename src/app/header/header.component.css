@@ -1,0 +1,15 @@
+.head{
+    position:static;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px;
+}
+button{
+    background-color: rgb(175, 225, 226);
+    margin: 5px;
+}
+button:hover{
+    background-color: rgb(137, 214, 240);
+}

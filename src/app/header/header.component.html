@@ -1,0 +1,19 @@
+<div class="head">
+<div class="griditem">
+    <h4 style="float: left;">
+        <b>Date: </b>{{currentDate}}<br><br>
+        <b>Time: </b>{{currentTime}}
+    </h4>
+</div>
+<div class="griditem">
+   <a routerLink=""> <div><h1>AWS – Walk Through</h1>
+    <h4>Organized By Kalajitha</h4></div></a>
+    <a routerLink="register"><button type="button" class="btn">Register</button></a>
+    <a routerLink="edit"><button type="button" class="btn">Edit</button></a>
+    <a routerLink="list"><button type="button" [hidden]='list' class="btn">Candidate list</button></a>
+</div>
+<div class="griditem"><a routerLink="admin"><button type="button" [hidden]='admin' class="btn" style="float: right;">Admin</button></a><br><br><br>
+    <button type="button" class="btn" [hidden]='logout' style="float: right;" (click)="Logout()">Logout</button>
+</div>
+</div>
+
