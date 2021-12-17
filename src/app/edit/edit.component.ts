@@ -81,7 +81,7 @@ export class EditComponent implements OnInit {
      Tpwd:data.Tpwd
    }
    this.shared.updateuser(dat).subscribe(res=>{
-    this.msg=res;
+    this.msg="Participant updated Successfully";
     this.open(this.content)
    });
   }

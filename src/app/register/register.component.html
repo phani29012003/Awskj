@@ -127,7 +127,7 @@
     </div>
       <div class="col-12">
           <br>
-        <button  mat-raised-button color="primary"  type="submit" (click)="setdata(content)">Register</button>
+        <button  mat-raised-button color="primary"  type="submit" (click)="setdata(content)" [disabled]="regform.invalid">Register</button>
       </div>
       <br>
       <br>

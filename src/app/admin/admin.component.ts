@@ -40,12 +40,13 @@ export class AdminComponent implements OnInit {
   getdata(data,reg:NgForm,content){
     this.content=content;
     this.shared.getadmin(data).subscribe(res=>{
+      console.log(res);
       if(res!=null){
         localStorage.setItem("currentuser",data);
         this.router.navigate(['/list']);
       }
       else{
-        this.msg="Invalid data";
+        this.msg="Invalid username or password. Try again";
         this.open(this.content)
         reg.reset();
       }
